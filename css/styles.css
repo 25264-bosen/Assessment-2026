@@ -1,0 +1,111 @@
+:root {
+    --rosmini-blue: rgb(0, 84, 162);
+    --white: #ffffff;
+    --light-bg: #f4f7f9;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', Arial, sans-serif; background: var(--light-bg); color: #333; }
+
+/* Navigation Bar */
+.navbar {
+    background: var(--rosmini-blue);
+    color: white;
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky; top: 0; z-index: 100;
+}
+.nav-brand { display: flex; align-items: center; gap: 15px; }
+.logo { height: 50px; } 
+.motto { font-style: italic; font-size: 0.85rem; opacity: 0.9; }
+.nav-links { display: flex; list-style: none; gap: 20px; }
+.nav-links a { color: white; text-decoration: none; font-weight: 500; }
+.nav-links a:hover { text-decoration: underline; }
+
+/* Sports Grid - Flexbox Layout */
+.container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+.page-header { text-align: center; margin-bottom: 40px; }
+.page-header h1 { color: var(--rosmini-blue); font-size: 2.5rem; }
+
+.sports-grid {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 25px; 
+    justify-content: center;
+}
+
+.sport-card {
+    /* Desktop: 3 columns */
+    flex: 0 1 calc(33.333% - 17px); 
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+.sport-card:hover { transform: translateY(-5px); }
+
+.sport-card img {
+    width: 100%;
+    height: 220px; 
+    object-fit: cover; /* Optimization: Automatically crops images to fit */
+    display: block;
+}
+
+.sport-card h3 { padding: 20px; text-align: center; color: var(--rosmini-blue); }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar { flex-direction: column; text-align: center; gap: 10px; }
+    .sport-card { flex: 0 1 100%; } /* Mobile: 1 column */
+    .footer-container { flex-direction: column; text-align: center; }
+}
+
+/* Footer */
+footer { background: #1a1a1a; color: white; padding: 50px 5%; margin-top: 60px; }
+.footer-container { display: flex; justify-content: space-between; gap: 40px; }
+.footer-col { flex: 1; }
+.footer-col h4 { color: var(--rosmini-blue); margin-bottom: 20px; text-transform: uppercase; }
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 10px; }
+.footer-col a { color: #bbb; text-decoration: none; font-size: 0.9rem; }
+.footer-col a:hover { color: white; }
+
+.staff-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.staff-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 40px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.staff-table th {
+    background-color: rgb(0, 84, 162); /* 学校海军蓝 */
+    color: white;
+    text-align: left;
+    padding: 12px;
+    font-size: 1.1rem;
+}
+
+.staff-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+.staff-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.dept-header {
+    background-color: #e2e2e2 !important;
+    color: #333 !important;
+    font-weight: bold;
+}
